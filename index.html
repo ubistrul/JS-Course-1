@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Couse</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  <section class="hero">
+    <div class="container">
+      <div class="hero__header">
+        <h1 class="hero__title">JS course</h1>
+        <div class="bmi">
+          <h2 class="bmi__title title-h2">Body Mass Index (BMI) Calculator</h2>
+          <div class="bmi__inputs">
+            <div class="bmi__input-wrapper">
+              <div class="bmi__input-number">
+                <input type="number" class="bmi__label" data-value="mass" min="5" max="200" step="1" value="70"></input>
+                <span class="bmi__unit" data-value="mass">kg.</span>
+              </div>
+              <input class="bmi__input styled-slider slider-progress" data-value="mass" type="range" name="mass" id=""
+                min="5" max="200" step="1" value="70">
+            </div>
+            <div class="bmi__input-wrapper">
+              <div class="bmi__input-number">
+                <input type="number" class="bmi__label" data-value="height" min="0" max="2.5" step="0.01"
+                  value="1.7"></input>
+                <span class="bmi__unit" data-value="mass">m.</span>
+              </div>
+              <input class="bmi__input styled-slider slider-progress" data-value="height" type="range" name="height"
+                id="" min="0" max="2.5" step="0.01" value="1.7">
+            </div>
+          </div>
+          <div class="bmi__result">
+            <button class="bmi__result-btn" type="button">Сalculate BMI</button>
+            <div class="bmi__result-text-wrapper">
+              <p class="bmi__result-text">48</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="./js/main.js" defer></script>
+</body>
+
+</html>

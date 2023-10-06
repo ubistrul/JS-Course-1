@@ -1,0 +1,102 @@
+@import url('./reset.css');
+@import url('./range-sliders.css');
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.container {
+  padding: 0 15px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.bmi {
+  display: none;
+}
+
+.hero__title {
+  margin-bottom: 28px;
+}
+
+.bmi__title {
+  /* max-width: 232px; */
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.bmi__inputs {
+  display: flex;
+  gap: 12px;
+}
+
+.bmi__input-wrapper {
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 12px;
+  /* align-items: center; */
+}
+
+.bmi__input-number {
+  position: relative;
+}
+
+.bmi__unit {
+  display: block;
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  display: block;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.bmi__label {
+  width: 100%;
+  font-size: 1.125rem;
+  border: 1px solid black;
+  padding: 2px 4px;
+}
+
+.bmi__input-number:hover .bmi__unit,
+.bmi__input-number:focus-within .bmi__unit {
+  display: none;
+}
+
+
+.bmi__label[data-value="mass"]::after {
+  content: 'kg.';
+  margin-left: 4px;
+}
+
+.bmi__label[data-value="height"]::after {
+  content: 'cm.';
+  margin-left: 4px;
+}
+
+.bmi__result-btn {
+  padding: 8px 12px;
+  border: 1px solid black;
+}
+
+.bmi__result {
+  display: flex;
+  gap: 12px;
+}
+
+.bmi__result-text-wrapper {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bmi__result-text-wrapper::before {
+  font-size: 18px;
+  content: 'result: '
+}
