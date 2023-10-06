@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS Couse</title>
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="shortcut icon" href="#">
 </head>
 
 <body>
@@ -13,7 +14,7 @@
     <div class="container">
       <div class="hero__header">
         <h1 class="hero__title">JS course</h1>
-        <div class="bmi">
+        <!-- <div class="bmi">
           <h2 class="bmi__title title-h2">Body Mass Index (BMI) Calculator</h2>
           <div class="bmi__inputs">
             <div class="bmi__input-wrapper">
@@ -40,8 +41,21 @@
               <p class="bmi__result-text">48</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
+    </div>
+  </section>
+  <section class="quess-number">
+    <div class="container">
+      <p id="guess"></p>
+      <div class="quess-number__game-buttons">
+        <button class="quess-number__btn" id="lower">Меньше</button>
+        <button class="quess-number__btn" id="higher">Больше</button>
+        <button class="quess-number__btn" id="correct" disabled>Угадал</button>
+        <button class="quess-number__btn" id="reset" disabled>Заново</button>
+      </div>
+      <ol class="quess-number__list" id="list"></ol>
+      <!-- <ol></ol> -->
     </div>
   </section>
   <script src="./js/main.js" defer></script>

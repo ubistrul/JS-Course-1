@@ -100,3 +100,63 @@ h1 {
   font-size: 18px;
   content: 'result: '
 }
+
+/**************************/
+
+.quess-number__game-buttons {
+  display: none;
+}
+
+.quess-number__game-buttons--active {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.quess-number__game-buttons--active#guess {
+  cursor: auto;
+}
+
+.quess-number__btn {
+  padding: 8px 12px;
+  border: 1px solid black;
+}
+
+.quess-number__btn:disabled {
+  color: #b1b1b1;
+  border: 1px solid #b1b1b1;
+}
+
+#lower:active {
+  color: #ffffff;
+  background-color: blue;
+  border-color: blue;
+}
+
+#lower {}
+
+#higher {}
+
+#reset {}
+
+#guess {
+  font-size: 32px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.quess-number__list {
+  /* list-style: auto; */
+}
+
+li {
+  text-align: match parent;
+}
+
+li::marker {
+  list-style-position: outside;
+  text-align: end;
+  text-transform: none;
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+  white-space: pre;
+}

@@ -47,7 +47,12 @@ p {
 
 ul,
 ul li {
-  list-style: none;
+  margin: initial;
+  padding: initial;
+  /* list-style: none; */
+  list-style-type: decimal;
+  list-style-position: inside;
+  overflow: auto;
 }
 
 img {
