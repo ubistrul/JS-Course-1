@@ -112,9 +112,9 @@ h1 {
   margin-bottom: 24px;
 }
 
-.quess-number__game-buttons--active#guess {
+/* .quess-number__game-buttons--active#guess {
   cursor: auto;
-}
+} */
 
 .quess-number__btn {
   padding: 8px 12px;
@@ -141,7 +141,7 @@ h1 {
 #guess {
   font-size: 32px;
   margin-bottom: 16px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .quess-number__list {
