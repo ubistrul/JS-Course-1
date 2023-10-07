@@ -109,7 +109,7 @@ h1 {
 
 .quess-number__game-buttons--active {
   display: block;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 /* .quess-number__game-buttons--active#guess {
@@ -126,35 +126,44 @@ h1 {
   border: 1px solid #b1b1b1;
 }
 
-#lower:active {
-  color: #ffffff;
-  background-color: blue;
-  border-color: blue;
+.quess-number__btn:active {
+  padding: 8px 12px;
+  border: 1px solid black;
 }
 
-#lower {}
+#lower:active:not(:disabled),
+#higher:active:not(:disabled) {
+  background-color: #d3d3d3;
+  border-color: #d3d3d3;
+}
 
-#higher {}
+#correct:active:not(:disabled) {
+  color: white;
+  background-color: green;
+  border-color: green;
+}
 
-#reset {}
+#reset:active {
+  background-color: yellow;
+  border-color: yellow;
+}
 
 #guess {
   display: inline-block;
   font-size: 32px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
+  padding-bottom: 16px;
   cursor: pointer;
 }
 
-.quess-number__list {
-  /* list-style: auto; */
-}
-
-li {
+.quess-number__list>li {
   font-size: 20px;
   line-height: 1.4;
 }
 
-li::marker {
+
+
+.quess-number__list>li::marker {
   list-style-position: outside;
   text-align: end;
   text-transform: none;

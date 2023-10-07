@@ -1,4 +1,4 @@
-console.log(1);
+// console.log(1);
 
 // import bmiCalc from './modules/bmiCalc';
 // bmiCalc();

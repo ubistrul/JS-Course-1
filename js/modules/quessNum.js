@@ -1,7 +1,11 @@
+'use strict';
+
 class NumberGuesser {
 	constructor(minNum, maxNum) {
 		this.minNum = minNum;
 		this.maxNum = maxNum;
+		this.minNumInit = 0;
+		this.maxNumInit = 1000;
 		this.guess = this.guessNumber();
 		this.variants = [];
 		this.rounds = 1;
@@ -28,7 +32,6 @@ class NumberGuesser {
 		this.guess = this.guessNumber();
 		this.rounds++;
 		if(this.rounds > this.roundsLimit) {
-			console.log('lossstate from lower');
 			this.lossState();
 		}
 	};
@@ -38,19 +41,19 @@ class NumberGuesser {
 		this.guess = this.guessNumber();
 		this.rounds++;
 		if(this.rounds > this.roundsLimit) {
-			console.log('lossstate from higher');
 			this.lossState();
 		}
 	};
 
 	reset = () => {
 		this.variants = [];
-		this.minNum = 0;
-		this.maxNum = 1000;
+		this.minNum = this.minNumInit;
+		this.maxNum = this.maxNumInit;
 		this.guess = this.guessNumber();
 		this.resetButton.disabled = true;
+		this.higherButton.disabled = false;
+		this.lowerButton.disabled = false;
 		this.rounds = 1;
-		// this.textContent = `Ваше число: ${this.guess}?`;
 	};
 
 	startGame = () => {
@@ -61,7 +64,6 @@ class NumberGuesser {
 	};
 
 	lossState = () => {
-		console.log('LOSS!');
 		this.isGameStarted = false;
 		this.guessElement.textContent = 'Я не угадал 😔 Кликни на меня и дай мне отыграться!';
 		this.isGameLoss = true;
@@ -71,21 +73,24 @@ class NumberGuesser {
 	};
 
 }
-
+//* FUNCTION -- ADD VARIANT TO PAGE 
 const addVariantToPage = () => {
+	numberGuesser.variants.push(numberGuesser.guess);
 	let newLi = document.createElement('li');
 	numberGuesser.list.appendChild(newLi).textContent = numberGuesser.variants[numberGuesser.variants.length - 1];
-	console.log(numberGuesser.rounds);
 };
 
+//* FUNCTION -- REMOVE VARIANTS FROM PAGE 
 const removeVariantsFromPage = () => {
 	numberGuesser.list.innerHTML = '';
 	numberGuesser.variants = [];
 };
 
+//** INITIAL STATE OF PROGRAMM
 let numberGuesser = new NumberGuesser(0, 1000);
 numberGuesser.guessElement.textContent = `Нажми на меня и я попробую отгадать число от ${numberGuesser.minNum} до ${numberGuesser.maxNum}!`;
 
+//** Listener GUESS TEXT
 numberGuesser.guessElement.addEventListener('click', () => {
 	if (!numberGuesser.isGameStarted) {
 		if (numberGuesser.isGameLoss) {
@@ -96,9 +101,9 @@ numberGuesser.guessElement.addEventListener('click', () => {
 	}
 });
 
+//** Listener LOWER BUTTON
 numberGuesser.lowerButton.addEventListener('click', () => {
 	if (!numberGuesser.isGameLoss) {
-		numberGuesser.variants.push(numberGuesser.guess);
 		addVariantToPage();
 		numberGuesser.lower();
 		if (numberGuesser.isGameStarted) {
@@ -107,9 +112,9 @@ numberGuesser.lowerButton.addEventListener('click', () => {
 	}
 });
 
+//** Listener HIGHER BUTTON
 numberGuesser.higherButton.addEventListener('click', () => {
 	if (!numberGuesser.isGameLoss)  {
-		numberGuesser.variants.push(numberGuesser.guess);
 		addVariantToPage();
 		numberGuesser.higher();
 		if (numberGuesser.isGameStarted) {
@@ -118,13 +123,17 @@ numberGuesser.higherButton.addEventListener('click', () => {
 	}
 });
 
-
+//** Listener CORRECT BUTTON
 numberGuesser.correctButton.addEventListener('click', () => {
-	numberGuesser.guessElement.textContent = `УГАДАЛ! Ваше число: ${numberGuesser.guess}`;
+	addVariantToPage();
+	numberGuesser.guessElement.textContent = `УГАДАЛ! 🫡 Ваше число: ${numberGuesser.guess}. Количество попыток: ${numberGuesser.rounds}`;
 	numberGuesser.resetButton.disabled = false;
 	numberGuesser.correctButton.disabled = true;
+	numberGuesser.higherButton.disabled = true;
+	numberGuesser.lowerButton.disabled = true;
 });
 
+//** Listener RESET BUTTON
 numberGuesser.resetButton.addEventListener('click', () => {
 	numberGuesser.reset();
 	removeVariantsFromPage();
