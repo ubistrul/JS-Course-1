@@ -5,6 +5,7 @@ class NumberGuesser {
 		this.guess = this.guessNumber();
 		this.variants = [];
 		this.rounds = 1;
+		this.roundsLimit = 10;
 		this.roundsInit = 1;
 		this.list = document.getElementById('list');
 		this.buttonsBlock = document.querySelector('.quess-number__game-buttons');
@@ -26,7 +27,7 @@ class NumberGuesser {
 		this.maxNum = this.guess - 1;
 		this.guess = this.guessNumber();
 		this.rounds++;
-		if(this.rounds > 10) {
+		if(this.rounds > this.roundsLimit) {
 			console.log('lossstate from lower');
 			this.lossState();
 		}
@@ -36,7 +37,7 @@ class NumberGuesser {
 		this.minNum = this.guess + 1;
 		this.guess = this.guessNumber();
 		this.rounds++;
-		if(this.rounds > 10) {
+		if(this.rounds > this.roundsLimit) {
 			console.log('lossstate from higher');
 			this.lossState();
 		}

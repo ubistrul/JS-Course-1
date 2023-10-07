@@ -139,9 +139,10 @@ h1 {
 #reset {}
 
 #guess {
+  display: inline-block;
   font-size: 32px;
   margin-bottom: 16px;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 .quess-number__list {
@@ -149,7 +150,8 @@ h1 {
 }
 
 li {
-  text-align: match parent;
+  font-size: 20px;
+  line-height: 1.4;
 }
 
 li::marker {

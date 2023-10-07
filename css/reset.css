@@ -46,13 +46,17 @@ p {
 }
 
 ul,
+ol,
 ul li {
-  margin: initial;
-  padding: initial;
+  /* padding-left: 15px; */
+  /* margin-top: 1em;
+  margin-bottom: 1em; */
+  /* margin: initial;
+  padding: initial; */
   /* list-style: none; */
-  list-style-type: decimal;
+  /* list-style-type: decimal; */
   list-style-position: inside;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 img {
