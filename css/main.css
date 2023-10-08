@@ -10,8 +10,13 @@ html {
   padding: 0 15px;
 }
 
+.none {
+  display: none;
+}
+
 h1 {
   font-size: 3rem;
+  cursor: crosshair;
 }
 
 .bmi {
