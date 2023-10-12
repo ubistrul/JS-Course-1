@@ -77,3 +77,4 @@ h1.addEventListener('click', () => {
 	h1.style.removeProperty('background-color'); // Убираем стиль
 	h1.removeAttribute('title');
 });
+
