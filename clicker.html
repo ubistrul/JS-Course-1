@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/clicker.css">
+    <title>Clicker counter</title>
+</head>
+
+<body>
+    <main>
+        <section class="clicker-counter">
+            <div class="container">
+                <div class="counter__wrapper">
+                    <div class="counter__result border backdrop-blur">64</div>
+                    <div class="counter__control border">
+                        <div class="control">
+                            <button data-control="decrease" class="btn control-btn backdrop-blur">-</button>
+                        </div>
+                        <div class="control">
+                            <button type="button" data-control="increase"
+                                class="btn control-btn backdrop-blur">+</button>
+                        </div>
+                        <button type="button" data-control="interval-menu" class="counter__interval-menu-btn">Изменить
+                            интервалы</button>
+                    </div>
+                    <div class="counter__selects">
+                        <select data-control="decrease-interval" name="decrease-interval" id=""
+                            class="counter__control-select backdrop-blur">
+                            <option value="1">1</option>
+                            <option value="2.5">2.5</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <select data-control="increase-interval" name="increase-interval" id=""
+                            class="counter__control-select backdrop-blur">
+                            <option value="1">1</option>
+                            <option value="2.5">2.5</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                    <div class="global-counter__wrapper border backdrop-blur">
+                        <div class="global-counter__div">
+                            <div class="global-counter__text">Total clicks:</div>
+                            <div class="global-counter__num"></div>
+                        </div>
+                        <div class="global-counter__div"></div>
+                    </div>
+                    <button type="button" data-control="reset"
+                        class="btn border counter__control-btn--reset backdrop-blur">Reset</button>
+                </div>
+            </div>
+            <video class="background" width="1620" height="1080" autoplay="" muted="" loop="" playsinline=""
+                style="width: 530.6px; height: 353.733px;">
+                <source src="https://files.cargocollective.com/c1532996/0_steven_cleaning_centered_600_bitrate.mp4"
+                    type="video/mp4">
+            </video>
+        </section>
+    </main>
+    <script src="./js/counterClicker.js" defer></script>
+</body>
+
+</html>
