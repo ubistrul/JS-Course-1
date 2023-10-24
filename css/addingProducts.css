@@ -1,0 +1,56 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px 24px;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+span {
+  display: inline-block;
+  margin-top: auto;
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.product-list__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* Выравнивание элементов по верхней части */
+  height: 100%;
+  /* Заполнение всего доступного пространства */
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.product-list {
+  margin-bottom: 48px;
+}
+
+.recalculate-button {
+  font-size: 48px;
+  padding: 12px 24px;
+}
+
+.recalculate-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.total-price {
+  font-size: 48px;
+}
