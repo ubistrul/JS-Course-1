@@ -1,9 +1,15 @@
 @import url('./reset.css');
 @import url('./range-sliders.css');
+@import url(./fonts.css);
+
+:root {
+  --main-font: HelveticaNeueCyr;
+  --condensed-font: Helvetica Neue;
+}
 
 html {
-  font-family: Arial, Helvetica, sans-serif;
-  letter-spacing: -0.5px;
+  font-family: HelveticaNeueCyr, Arial, Helvetica, sans-serif;
+  letter-spacing: -0.25px;
 }
 
 .container {
