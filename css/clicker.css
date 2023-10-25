@@ -238,3 +238,15 @@ select.counter__control-select[data-control="increase-interval"] {
 .counter__interval-menu-btn--hidden {
     transform: translateY(100%);
 }
+
+.go-index-link {
+    color: black;
+    position: fixed;
+    top: 12px;
+    text-transform: uppercase;
+    transition: color .2s ease-in;
+}
+
+.go-index-link:hover {
+    color: #696969;
+}
